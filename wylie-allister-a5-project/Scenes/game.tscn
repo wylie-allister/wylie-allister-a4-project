@@ -1,0 +1,92 @@
+[gd_scene load_steps=15 format=3 uid="uid://bfndct5fmj401"]
+
+[ext_resource type="Texture2D" uid="uid://c7id133upxei7" path="res://Assets/Background.png" id="1_44odc"]
+[ext_resource type="Texture2D" uid="uid://e8dbgclsl1at" path="res://Assets/Stalagtites.png" id="2_b5lft"]
+[ext_resource type="Texture2D" uid="uid://ckxgnwuarmvyf" path="res://Assets/Box.png" id="3_d2ugx"]
+[ext_resource type="Texture2D" uid="uid://djhmndijvpggn" path="res://Assets/Bumblebee Orb.png" id="4_6y5xg"]
+[ext_resource type="Texture2D" uid="uid://bvvdevq210tw2" path="res://Assets/Honduran White Orb.png" id="5_ucphb"]
+[ext_resource type="Texture2D" uid="uid://bp2vek2idcwkr" path="res://Assets/LBB Orb.png" id="6_s0bfa"]
+[ext_resource type="Texture2D" uid="uid://bjfoeoqvnqq5h" path="res://Assets/Red Bat Orb.png" id="7_1am5x"]
+[ext_resource type="Texture2D" uid="uid://dq03ab3qem402" path="res://Assets/Rahhh Orb.png" id="8_ap0bg"]
+[ext_resource type="Texture2D" uid="uid://dk1qkk5o4ag6a" path="res://Assets/Vampire Orb.png" id="9_i1w5a"]
+[ext_resource type="Texture2D" uid="uid://bmrg71scqaowr" path="res://Assets/Squarshed Orb.png" id="10_s7l8b"]
+[ext_resource type="Texture2D" uid="uid://co0yhemxxl1j7" path="res://Assets/Sword Nosed Bat Orb.png" id="11_hhphu"]
+[ext_resource type="Texture2D" uid="uid://dxuq216qo287u" path="res://Assets/Big Eared Bat.png" id="12_a0fli"]
+[ext_resource type="Texture2D" uid="uid://bps8hj82awldl" path="res://Assets/Leaf Nosed Orb.png" id="13_5qpb4"]
+[ext_resource type="Texture2D" uid="uid://cotiwk73y15wg" path="res://Assets/Flying Fox Orb.png" id="14_mpcsv"]
+
+[node name="Scene" type="Node2D"]
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Background" type="Sprite2D" parent="Background"]
+position = Vector2(577, 327)
+scale = Vector2(0.598958, 0.6)
+texture = ExtResource("1_44odc")
+
+[node name="Stalags" type="Sprite2D" parent="Background"]
+position = Vector2(580, 326.5)
+scale = Vector2(0.601042, 0.597222)
+texture = ExtResource("2_b5lft")
+
+[node name="Box" type="Sprite2D" parent="Background"]
+position = Vector2(579, 332)
+scale = Vector2(0.599074, 0.599074)
+texture = ExtResource("3_d2ugx")
+
+[node name="Orbs" type="Node2D" parent="."]
+
+[node name="Bumblebee Bat" type="Sprite2D" parent="Orbs"]
+position = Vector2(892, -62)
+scale = Vector2(0.84, 0.84)
+texture = ExtResource("4_6y5xg")
+
+[node name="Honduran White Bat" type="Sprite2D" parent="Orbs"]
+position = Vector2(841, -68)
+scale = Vector2(0.78, 0.78)
+texture = ExtResource("5_ucphb")
+
+[node name="Little Brown Bat" type="Sprite2D" parent="Orbs"]
+position = Vector2(774, -71)
+scale = Vector2(0.673333, 0.673333)
+texture = ExtResource("6_s0bfa")
+
+[node name="Eastern Red Bat" type="Sprite2D" parent="Orbs"]
+position = Vector2(685, -72)
+scale = Vector2(0.628333, 0.628333)
+texture = ExtResource("7_1am5x")
+
+[node name="Ghost Faced Bat" type="Sprite2D" parent="Orbs"]
+position = Vector2(578, -82.0001)
+scale = Vector2(0.661, 0.661)
+texture = ExtResource("8_ap0bg")
+
+[node name="Vampire Bat" type="Sprite2D" parent="Orbs"]
+position = Vector2(440, -90)
+scale = Vector2(0.585, 0.585)
+texture = ExtResource("9_i1w5a")
+
+[node name="Hammerhead Bat" type="Sprite2D" parent="Orbs"]
+position = Vector2(269, -100)
+scale = Vector2(0.467143, 0.467143)
+texture = ExtResource("10_s7l8b")
+
+[node name="Sword Nosed Bat" type="Sprite2D" parent="Orbs"]
+position = Vector2(70.0001, -105)
+scale = Vector2(0.617143, 0.617143)
+texture = ExtResource("11_hhphu")
+
+[node name="Big Eared Bat" type="Sprite2D" parent="Orbs"]
+position = Vector2(-183, -76)
+scale = Vector2(0.591, 0.591)
+texture = ExtResource("12_a0fli")
+
+[node name="Leaf Nosed Bat" type="Sprite2D" parent="Orbs"]
+position = Vector2(-178, 196)
+scale = Vector2(0.60325, 0.60325)
+texture = ExtResource("13_5qpb4")
+
+[node name="Flying Fox" type="Sprite2D" parent="Orbs"]
+position = Vector2(-179, 497)
+scale = Vector2(0.709, 0.709)
+texture = ExtResource("14_mpcsv")

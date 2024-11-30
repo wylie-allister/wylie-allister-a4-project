@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://bfndct5fmj401"]
+[gd_scene load_steps=17 format=3 uid="uid://bfndct5fmj401"]
 
 [ext_resource type="Texture2D" uid="uid://c7id133upxei7" path="res://Assets/Background.png" id="1_44odc"]
 [ext_resource type="Texture2D" uid="uid://e8dbgclsl1at" path="res://Assets/Stalagtites.png" id="2_b5lft"]
 [ext_resource type="Texture2D" uid="uid://ckxgnwuarmvyf" path="res://Assets/Box.png" id="3_d2ugx"]
 [ext_resource type="Texture2D" uid="uid://djhmndijvpggn" path="res://Assets/Bumblebee Orb.png" id="4_6y5xg"]
+[ext_resource type="Script" path="res://addons/2d_shapes/shapes/Ellipse.gd" id="4_8pnoc"]
 [ext_resource type="Texture2D" uid="uid://bvvdevq210tw2" path="res://Assets/Honduran White Orb.png" id="5_ucphb"]
 [ext_resource type="Texture2D" uid="uid://bp2vek2idcwkr" path="res://Assets/LBB Orb.png" id="6_s0bfa"]
 [ext_resource type="Texture2D" uid="uid://bjfoeoqvnqq5h" path="res://Assets/Red Bat Orb.png" id="7_1am5x"]
@@ -14,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://dxuq216qo287u" path="res://Assets/Big Eared Bat.png" id="12_a0fli"]
 [ext_resource type="Texture2D" uid="uid://bps8hj82awldl" path="res://Assets/Leaf Nosed Orb.png" id="13_5qpb4"]
 [ext_resource type="Texture2D" uid="uid://cotiwk73y15wg" path="res://Assets/Flying Fox Orb.png" id="14_mpcsv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fjpqy"]
 
 [node name="Scene" type="Node2D"]
 
@@ -34,17 +37,62 @@ position = Vector2(579, 332)
 scale = Vector2(0.599074, 0.599074)
 texture = ExtResource("3_d2ugx")
 
-[node name="Orbs" type="Node2D" parent="."]
+[node name="Balls" type="Node2D" parent="."]
 
-[node name="Bumblebee Bat" type="Sprite2D" parent="Orbs"]
-position = Vector2(892, -62)
-scale = Vector2(0.84, 0.84)
+[node name="BB Ball" type="StaticBody2D" parent="Balls"]
+position = Vector2(571, 117)
+scale = Vector2(1.7, 1.7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Balls/BB Ball"]
+shape = SubResource("CircleShape2D_fjpqy")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Balls/BB Ball"]
+script = ExtResource("4_8pnoc")
+size = Vector2(20, 20)
+circle = true
+metadata/_edit_lock_ = true
+
+[node name="Bumblebee Bat" type="Sprite2D" parent="Balls/BB Ball"]
+scale = Vector2(0.494118, 0.494118)
 texture = ExtResource("4_6y5xg")
+metadata/_edit_lock_ = true
 
-[node name="Honduran White Bat" type="Sprite2D" parent="Orbs"]
-position = Vector2(841, -68)
-scale = Vector2(0.78, 0.78)
+[node name="HW Ball" type="StaticBody2D" parent="Balls"]
+position = Vector2(712, 115)
+scale = Vector2(2.7, 2.7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Balls/HW Ball"]
+shape = SubResource("CircleShape2D_fjpqy")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Balls/HW Ball"]
+script = ExtResource("4_8pnoc")
+size = Vector2(20, 20)
+circle = true
+metadata/_edit_lock_ = true
+
+[node name="Honduran White Bat" type="Sprite2D" parent="Balls/HW Ball"]
+position = Vector2(3.05176e-05, 3.36766e-06)
+scale = Vector2(0.288889, 0.288889)
 texture = ExtResource("5_ucphb")
+metadata/_edit_lock_ = true
+
+[node name="Ball3" type="StaticBody2D" parent="Balls"]
+position = Vector2(429, 162)
+scale = Vector2(2.7, 2.7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Balls/Ball3"]
+shape = SubResource("CircleShape2D_fjpqy")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="Balls/Ball3"]
+script = ExtResource("4_8pnoc")
+size = Vector2(20, 20)
+circle = true
+metadata/_edit_lock_ = true
+
+[node name="Orbs" type="Node2D" parent="."]
 
 [node name="Little Brown Bat" type="Sprite2D" parent="Orbs"]
 position = Vector2(774, -71)

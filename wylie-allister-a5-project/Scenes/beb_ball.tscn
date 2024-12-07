@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlftrtnqwsdjr"]
+
+[ext_resource type="Script" path="res://Scripts/BbBall.cs" id="1_nh0ap"]
+[ext_resource type="Script" path="res://addons/2d_shapes/shapes/Ellipse.gd" id="2_18uhr"]
+[ext_resource type="Texture2D" uid="uid://dxuq216qo287u" path="res://Assets/Big Eared Bat.png" id="3_2lrbm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8v8cg"]
+radius = 26.2294
+
+[node name="BEB Ball" type="Node2D"]
+
+[node name="BEB Ball" type="RigidBody2D" parent="."]
+gravity_scale = -1.0
+script = ExtResource("1_nh0ap")
+ballValue = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BEB Ball"]
+scale = Vector2(4.2, 4.2)
+shape = SubResource("CircleShape2D_8v8cg")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="BEB Ball"]
+position = Vector2(0, 3.05176e-05)
+scale = Vector2(4.2, 4.2)
+script = ExtResource("2_18uhr")
+size = Vector2(50.5981, 50.5981)
+circle = true
+metadata/_edit_lock_ = true
+
+[node name="Big Eared Bat" type="Sprite2D" parent="BEB Ball"]
+position = Vector2(0, 6.10352e-05)
+scale = Vector2(0.590999, 0.590999)
+texture = ExtResource("3_2lrbm")
+metadata/_edit_lock_ = true

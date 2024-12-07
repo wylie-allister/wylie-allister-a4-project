@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://j405ft7fdmun"]
+
+[ext_resource type="Script" path="res://Scripts/BbBall.cs" id="1_4uwbv"]
+[ext_resource type="Script" path="res://addons/2d_shapes/shapes/Ellipse.gd" id="2_prdry"]
+[ext_resource type="Texture2D" uid="uid://cotiwk73y15wg" path="res://Assets/Flying Fox Orb.png" id="3_6th3v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2vuet"]
+radius = 38.096
+
+[node name="FF Ball" type="Node2D"]
+
+[node name="FFB Ball" type="RigidBody2D" parent="."]
+gravity_scale = -1.0
+script = ExtResource("1_4uwbv")
+ballValue = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FFB Ball"]
+scale = Vector2(4.2, 4.2)
+shape = SubResource("CircleShape2D_2vuet")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="FFB Ball"]
+position = Vector2(0, 6.10352e-05)
+scale = Vector2(4.2, 4.2)
+script = ExtResource("2_prdry")
+size = Vector2(76.1965, 76.1965)
+circle = true
+metadata/_edit_lock_ = true
+
+[node name="Flying Fox" type="Sprite2D" parent="FFB Ball"]
+position = Vector2(0, 6.10352e-05)
+scale = Vector2(0.709002, 0.709002)
+texture = ExtResource("3_6th3v")
+metadata/_edit_lock_ = true

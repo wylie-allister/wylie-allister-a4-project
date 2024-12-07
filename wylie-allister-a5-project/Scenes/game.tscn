@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bfndct5fmj401"]
+[gd_scene load_steps=20 format=3 uid="uid://bfndct5fmj401"]
 
 [ext_resource type="Texture2D" uid="uid://c7id133upxei7" path="res://Assets/Background.png" id="1_44odc"]
 [ext_resource type="Texture2D" uid="uid://e8dbgclsl1at" path="res://Assets/Stalagtites.png" id="2_b5lft"]
@@ -11,7 +11,13 @@
 [ext_resource type="PackedScene" uid="uid://2h1wg4itanfm" path="res://Scenes/llb_ball.tscn" id="9_u2k84"]
 [ext_resource type="PackedScene" uid="uid://doh1cg4mpjs7" path="res://Scenes/erb_ball.tscn" id="10_g7b2r"]
 [ext_resource type="PackedScene" uid="uid://f0a8wwuxmpo0" path="res://Scenes/gfb_ball.tscn" id="11_427q2"]
+[ext_resource type="PackedScene" uid="uid://dc78ndbw3g1cj" path="res://Scenes/vb_ball.tscn" id="12_n2eiv"]
+[ext_resource type="PackedScene" uid="uid://7isq8yiwqhe" path="res://Scenes/hh_ball.tscn" id="13_f6gxj"]
+[ext_resource type="PackedScene" uid="uid://d0mylgcj6vin" path="res://Scenes/snb_ball.tscn" id="14_ltrwt"]
+[ext_resource type="PackedScene" uid="uid://dlftrtnqwsdjr" path="res://Scenes/beb_ball.tscn" id="15_864t4"]
+[ext_resource type="PackedScene" uid="uid://dk47n81y3xci5" path="res://Scenes/lnb_ball.tscn" id="16_aotkd"]
 [ext_resource type="Script" path="res://Scripts/Dropper.cs" id="16_hwheb"]
+[ext_resource type="PackedScene" uid="uid://j405ft7fdmun" path="res://Scenes/ff_ball.tscn" id="17_t0u4b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_57gtb"]
 
@@ -70,6 +76,24 @@ visible = false
 visible = false
 
 [node name="GFB Ball" parent="BallScenes" instance=ExtResource("11_427q2")]
+visible = false
+
+[node name="VB Ball" parent="BallScenes" instance=ExtResource("12_n2eiv")]
+visible = false
+
+[node name="HH Ball" parent="BallScenes" instance=ExtResource("13_f6gxj")]
+visible = false
+
+[node name="SNB Ball" parent="BallScenes" instance=ExtResource("14_ltrwt")]
+visible = false
+
+[node name="BEB Ball" parent="BallScenes" instance=ExtResource("15_864t4")]
+visible = false
+
+[node name="LNB Ball" parent="BallScenes" instance=ExtResource("16_aotkd")]
+visible = false
+
+[node name="FF Ball" parent="BallScenes" instance=ExtResource("17_t0u4b")]
 visible = false
 
 [node name="Box" type="Node2D" parent="."]

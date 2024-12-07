@@ -27,11 +27,16 @@ scale = Vector2(0.599074, 0.599074)
 texture = ExtResource("3_d2ugx")
 
 [node name="Balls" parent="." instance=ExtResource("4_ayxt8")]
+position = Vector2(575, 615)
 
-[node name="Dropper" type="Node2D" parent="."]
+[node name="Dropper" type="Node2D" parent="." node_paths=PackedStringArray("BallParent")]
 position = Vector2(575, 615)
 script = ExtResource("16_hwheb")
+Prefab = ExtResource("4_ayxt8")
+BallParent = NodePath("../BallParent")
 
 [node name="Ellipse" type="Node2D" parent="Dropper"]
 script = ExtResource("4_8pnoc")
 size = Vector2(31.0332, 31.0332)
+
+[node name="BallParent" type="Node2D" parent="."]

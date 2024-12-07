@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bp2vek2idcwkr" path="res://Assets/LBB Orb.png" id="3_8bjdu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qd1ub"]
+radius = 33.0151
 
 [node name="LLB Ball" type="Node2D"]
 

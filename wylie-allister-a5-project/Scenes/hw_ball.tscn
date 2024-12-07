@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bvvdevq210tw2" path="res://Assets/Honduran White Orb.png" id="3_nf3qv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_86n56"]
+radius = 10.3703
 
 [node name="HW Ball" type="Node2D"]
 

@@ -6,12 +6,12 @@ public partial class Balls : Node2D
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        int rng = GD.RandRange(0, 5);
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(double delta)
     {
+        //variables potentially for merging??
         RigidBody2D bbBall = GetNode<RigidBody2D>("BB Ball");
         RigidBody2D hwBall = GetNode<RigidBody2D>("HW Ball");
         RigidBody2D lbbBall = GetNode<RigidBody2D>("LBB Ball");

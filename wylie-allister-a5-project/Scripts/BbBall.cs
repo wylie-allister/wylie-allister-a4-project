@@ -3,6 +3,7 @@ using System;
 
 public partial class BbBall : RigidBody2D
 {
+	//gives each ball a value
 	[Export]
 	int ballValue = 1;
 
@@ -15,12 +16,5 @@ public partial class BbBall : RigidBody2D
 	public override void _Process(double delta)
 	{
 
-        int randomBat = GD.RandRange(0, 5);
-        if (this.ballValue == randomBat)
-		{
-
-			
-			
-		}
 	}
 }

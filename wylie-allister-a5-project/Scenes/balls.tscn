@@ -1,6 +1,5 @@
-[gd_scene load_steps=23 format=3 uid="uid://oj85io8tuwc4"]
+[gd_scene load_steps=22 format=3 uid="uid://oj85io8tuwc4"]
 
-[ext_resource type="PhysicsMaterial" uid="uid://fpxvygnplyqj" path="res://PhysMaterials/physmat_invert.tres" id="1_he8c0"]
 [ext_resource type="Script" path="res://Scripts/BbBall.cs" id="2_n5kak"]
 [ext_resource type="Script" path="res://addons/2d_shapes/shapes/Ellipse.gd" id="2_ue02q"]
 [ext_resource type="Texture2D" uid="uid://djhmndijvpggn" path="res://Assets/Bumblebee Orb.png" id="3_xc7lk"]
@@ -40,255 +39,271 @@ radius = 38.096
 
 [node name="Balls" type="Node2D"]
 
-[node name="BB Ball" type="StaticBody2D" parent="."]
-position = Vector2(571, 117)
-scale = Vector2(1.7, 1.7)
-physics_material_override = ExtResource("1_he8c0")
+[node name="BB Ball" type="RigidBody2D" parent="."]
+position = Vector2(41, 28)
+gravity_scale = -1.0
 script = ExtResource("2_n5kak")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BB Ball"]
+scale = Vector2(1.7, 1.7)
 shape = SubResource("CircleShape2D_fjpqy")
 metadata/_edit_lock_ = true
 
 [node name="Ellipse" type="Node2D" parent="BB Ball"]
+scale = Vector2(1.7, 1.7)
 script = ExtResource("2_ue02q")
 size = Vector2(20, 20)
 circle = true
 metadata/_edit_lock_ = true
 
 [node name="Bumblebee Bat" type="Sprite2D" parent="BB Ball"]
-scale = Vector2(0.494118, 0.494118)
+scale = Vector2(0.840001, 0.840001)
 texture = ExtResource("3_xc7lk")
 metadata/_edit_lock_ = true
 
-[node name="HW Ball" type="StaticBody2D" parent="."]
-position = Vector2(571, 117)
-scale = Vector2(1.7, 1.7)
-physics_material_override = ExtResource("1_he8c0")
+[node name="HW Ball" type="RigidBody2D" parent="."]
+position = Vector2(767, 214)
+scale = Vector2(1, 1)
+gravity_scale = -1.0
 script = ExtResource("2_n5kak")
 ballValue = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HW Ball"]
-position = Vector2(82.9412, -1.17647)
-scale = Vector2(1.58824, 1.58824)
+position = Vector2(0.00012207, 0)
+scale = Vector2(2.70001, 2.70001)
 shape = SubResource("CircleShape2D_fjpqy")
 metadata/_edit_lock_ = true
 
 [node name="Ellipse" type="Node2D" parent="HW Ball"]
-position = Vector2(82.9412, -1.17647)
-scale = Vector2(1.58824, 1.58824)
+position = Vector2(0.00012207, 0)
+scale = Vector2(2.70001, 2.70001)
 script = ExtResource("2_ue02q")
 size = Vector2(20, 20)
 circle = true
 metadata/_edit_lock_ = true
 
 [node name="Honduran White Bat" type="Sprite2D" parent="HW Ball"]
-position = Vector2(82.9412, -1.17647)
-scale = Vector2(0.458824, 0.458824)
+position = Vector2(0.00012207, 0)
+scale = Vector2(0.780001, 0.780001)
 texture = ExtResource("4_2d8uh")
 metadata/_edit_lock_ = true
 
-[node name="LBB Ball" type="StaticBody2D" parent="."]
+[node name="LBB Ball" type="RigidBody2D" parent="."]
 position = Vector2(530, 249)
-scale = Vector2(3.4, 3.4)
+gravity_scale = -1.0
 script = ExtResource("2_n5kak")
-ballValue = 3
+ballValue = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LBB Ball"]
+scale = Vector2(1, 1)
 shape = SubResource("CircleShape2D_fjpqy")
 metadata/_edit_lock_ = true
 
 [node name="Ellipse" type="Node2D" parent="LBB Ball"]
+position = Vector2(0.164879, 0.164879)
+scale = Vector2(3.2, 3.2)
 script = ExtResource("2_ue02q")
-size = Vector2(20, 20)
+size = Vector2(20.3298, 20.3298)
 circle = true
 metadata/_edit_lock_ = true
 
 [node name="Little Brown Bat" type="Sprite2D" parent="LBB Ball"]
 position = Vector2(0, -7.62939e-06)
-scale = Vector2(0.198039, 0.198039)
+scale = Vector2(0.62, 0.62)
 texture = ExtResource("5_iqe2a")
 metadata/_edit_lock_ = true
 
-[node name="ERB Ball" type="StaticBody2D" parent="."]
+[node name="ERB Ball" type="RigidBody2D" parent="."]
 position = Vector2(871, 225)
-scale = Vector2(4.2, 4.2)
+gravity_scale = -1.0
 script = ExtResource("2_n5kak")
 ballValue = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ERB Ball"]
+position = Vector2(-1.52588e-05, 0)
+scale = Vector2(1, 1)
 shape = SubResource("CircleShape2D_fjpqy")
 metadata/_edit_lock_ = true
 
 [node name="Ellipse" type="Node2D" parent="ERB Ball"]
+position = Vector2(-1.52588e-05, 0)
+scale = Vector2(4.2, 4.2)
 script = ExtResource("2_ue02q")
 size = Vector2(20, 20)
 circle = true
 metadata/_edit_lock_ = true
 
 [node name="Eastern Red Bat" type="Sprite2D" parent="ERB Ball"]
-position = Vector2(1.52588e-05, 3.8147e-06)
-scale = Vector2(0.149603, 0.149603)
+position = Vector2(0, 3.8147e-06)
+scale = Vector2(0.63, 0.63)
 texture = ExtResource("6_37xvi")
 metadata/_edit_lock_ = true
 
-[node name="GFB Ball" type="StaticBody2D" parent="."]
-position = Vector2(1056, 225)
-scale = Vector2(4.2, 4.2)
+[node name="GFB Ball" type="RigidBody2D" parent="."]
+position = Vector2(998, 274)
+gravity_scale = -1.0
 script = ExtResource("2_n5kak")
 ballValue = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GFB Ball"]
+scale = Vector2(4.2, 4.2)
 shape = SubResource("CircleShape2D_m5vdo")
 metadata/_edit_lock_ = true
 
 [node name="Ellipse" type="Node2D" parent="GFB Ball"]
-position = Vector2(9.53674e-06, -3.8147e-06)
+scale = Vector2(4.2, 4.2)
 script = ExtResource("2_ue02q")
 size = Vector2(27.6405, 27.6405)
 circle = true
 metadata/_edit_lock_ = true
 
 [node name="Ghost Faced Bat" type="Sprite2D" parent="GFB Ball"]
-position = Vector2(8.356e-06, -1.84774e-06)
-scale = Vector2(0.157381, 0.157381)
+scale = Vector2(0.661, 0.661)
 texture = ExtResource("7_pv6k4")
 metadata/_edit_lock_ = true
 
-[node name="VB Ball" type="StaticBody2D" parent="."]
-position = Vector2(656, 349)
-scale = Vector2(4.2, 4.2)
+[node name="VB Ball" type="RigidBody2D" parent="."]
+position = Vector2(657, 445)
+gravity_scale = -1.0
 script = ExtResource("2_n5kak")
 ballValue = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VB Ball"]
+scale = Vector2(4.2, 4.2)
 shape = SubResource("CircleShape2D_skp2n")
 metadata/_edit_lock_ = true
 
 [node name="Ellipse" type="Node2D" parent="VB Ball"]
-position = Vector2(-6.21378e-06, 9.53674e-07)
+scale = Vector2(4.2, 4.2)
 script = ExtResource("2_ue02q")
 size = Vector2(29.7538, 29.7538)
 circle = true
 metadata/_edit_lock_ = true
 
 [node name="Vampire Bat" type="Sprite2D" parent="VB Ball"]
-position = Vector2(-2.38419e-06, 1.90735e-06)
-scale = Vector2(0.139286, 0.139286)
+scale = Vector2(0.585001, 0.585001)
 texture = ExtResource("8_dwklg")
 metadata/_edit_lock_ = true
 
-[node name="HH Ball" type="StaticBody2D" parent="."]
-position = Vector2(934, 97)
-scale = Vector2(4.2, 4.2)
+[node name="HH Ball" type="RigidBody2D" parent="."]
+position = Vector2(1043, 119)
+gravity_scale = -1.0
 script = ExtResource("2_n5kak")
 ballValue = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HH Ball"]
+scale = Vector2(4.2, 4.2)
 shape = SubResource("CircleShape2D_hgfpo")
 metadata/_edit_lock_ = true
 
 [node name="Ellipse" type="Node2D" parent="HH Ball"]
-position = Vector2(1.52588e-05, 0)
+scale = Vector2(4.2, 4.2)
 script = ExtResource("2_ue02q")
 size = Vector2(35.6006, 35.6006)
 circle = true
 metadata/_edit_lock_ = true
 
 [node name="Hammerhead Bat" type="Sprite2D" parent="HH Ball"]
-position = Vector2(3.05176e-05, 0)
-scale = Vector2(0.111225, 0.111225)
+position = Vector2(0.00012207, 0)
+scale = Vector2(0.467145, 0.467145)
 texture = ExtResource("9_tqvus")
 metadata/_edit_lock_ = true
 
-[node name="SNB Ball" type="StaticBody2D" parent="."]
+[node name="SNB Ball" type="RigidBody2D" parent="."]
 position = Vector2(1062, 446)
-scale = Vector2(4.2, 4.2)
+gravity_scale = -1.0
 script = ExtResource("2_n5kak")
 ballValue = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SNB Ball"]
+scale = Vector2(4.2, 4.2)
 shape = SubResource("CircleShape2D_63ocn")
 metadata/_edit_lock_ = true
 
 [node name="Ellipse" type="Node2D" parent="SNB Ball"]
-position = Vector2(-5.73695e-06, 1.90735e-06)
+scale = Vector2(4.2, 4.2)
 script = ExtResource("2_ue02q")
 size = Vector2(39.5018, 39.5018)
 circle = true
 metadata/_edit_lock_ = true
 
 [node name="Sword Nosed Bat" type="Sprite2D" parent="SNB Ball"]
-scale = Vector2(0.146939, 0.146939)
+scale = Vector2(0.617144, 0.617144)
 texture = ExtResource("10_trmvu")
 metadata/_edit_lock_ = true
 
-[node name="BEB Ball" type="StaticBody2D" parent="."]
+[node name="BEB Ball" type="RigidBody2D" parent="."]
 position = Vector2(843, 506)
-scale = Vector2(4.2, 4.2)
+gravity_scale = -1.0
 script = ExtResource("2_n5kak")
 ballValue = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BEB Ball"]
+scale = Vector2(4.2, 4.2)
 shape = SubResource("CircleShape2D_blc8c")
 metadata/_edit_lock_ = true
 
 [node name="Ellipse" type="Node2D" parent="BEB Ball"]
-position = Vector2(3.7998e-06, 3.7998e-06)
+position = Vector2(0, 3.05176e-05)
+scale = Vector2(4.2, 4.2)
 script = ExtResource("2_ue02q")
 size = Vector2(50.5981, 50.5981)
 circle = true
 metadata/_edit_lock_ = true
 
 [node name="Big Eared Bat" type="Sprite2D" parent="BEB Ball"]
-position = Vector2(0, 1.52588e-05)
-scale = Vector2(0.140714, 0.140714)
+position = Vector2(0, 6.10352e-05)
+scale = Vector2(0.590999, 0.590999)
 texture = ExtResource("11_f85wy")
 metadata/_edit_lock_ = true
 
-[node name="LNB Ball" type="StaticBody2D" parent="."]
+[node name="LNB Ball" type="RigidBody2D" parent="."]
 position = Vector2(266, 415)
-scale = Vector2(4.2, 4.2)
+gravity_scale = -1.0
 script = ExtResource("2_n5kak")
 ballValue = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LNB Ball"]
+scale = Vector2(4.2, 4.2)
 shape = SubResource("CircleShape2D_o5rye")
 metadata/_edit_lock_ = true
 
 [node name="Ellipse" type="Node2D" parent="LNB Ball"]
-position = Vector2(3.42727e-06, 3.8445e-06)
+position = Vector2(0, 3.05176e-05)
+scale = Vector2(4.2, 4.2)
 script = ExtResource("2_ue02q")
 size = Vector2(59.5459, 59.5459)
 circle = true
 metadata/_edit_lock_ = true
 
 [node name="Leaf Nosed Bat" type="Sprite2D" parent="LNB Ball"]
-position = Vector2(0, 7.62939e-06)
-scale = Vector2(0.143631, 0.143631)
+position = Vector2(0, 3.05176e-05)
+scale = Vector2(0.60325, 0.60325)
 texture = ExtResource("12_0m471")
 metadata/_edit_lock_ = true
 
-[node name="FFB Ball" type="StaticBody2D" parent="."]
+[node name="FFB Ball" type="RigidBody2D" parent="."]
 position = Vector2(517, 626)
-scale = Vector2(4.2, 4.2)
+gravity_scale = -1.0
 script = ExtResource("2_n5kak")
 ballValue = 11
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FFB Ball"]
+scale = Vector2(4.2, 4.2)
 shape = SubResource("CircleShape2D_547fj")
 metadata/_edit_lock_ = true
 
 [node name="Ellipse" type="Node2D" parent="FFB Ball"]
-position = Vector2(9.38773e-07, 1.61529e-05)
+position = Vector2(0, 6.10352e-05)
+scale = Vector2(4.2, 4.2)
 script = ExtResource("2_ue02q")
 size = Vector2(76.1965, 76.1965)
 circle = true
 metadata/_edit_lock_ = true
 
 [node name="Flying Fox" type="Sprite2D" parent="FFB Ball"]
-position = Vector2(0, 1.52588e-05)
-scale = Vector2(0.16881, 0.16881)
+position = Vector2(0, 6.10352e-05)
+scale = Vector2(0.709002, 0.709002)
 texture = ExtResource("13_kvlfx")
 metadata/_edit_lock_ = true
 

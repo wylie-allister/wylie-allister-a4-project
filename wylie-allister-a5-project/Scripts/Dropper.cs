@@ -3,7 +3,6 @@ using System;
 
 public partial class Dropper : Node2D
 {
-	[Export]
 	float speed = 300;
 
 	[Export]
@@ -24,11 +23,9 @@ public partial class Dropper : Node2D
 		Translate(new Vector2 (moveX, 0));
 		if (Input.IsActionJustPressed("drop"))
 		{
-			
-		}
-	}
-	public void GetBat(BbBall ball)
-	{
-		
+            Node2D balls = Prefab.Instantiate<Node2D>();
+			balls.GlobalPosition = this.GlobalPosition;
+			BallParent.AddChild(balls);
+        }
 	}
 }

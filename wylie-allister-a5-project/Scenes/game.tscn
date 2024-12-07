@@ -1,10 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://bfndct5fmj401"]
+[gd_scene load_steps=12 format=3 uid="uid://bfndct5fmj401"]
 
 [ext_resource type="Texture2D" uid="uid://c7id133upxei7" path="res://Assets/Background.png" id="1_44odc"]
 [ext_resource type="Texture2D" uid="uid://e8dbgclsl1at" path="res://Assets/Stalagtites.png" id="2_b5lft"]
 [ext_resource type="Texture2D" uid="uid://ckxgnwuarmvyf" path="res://Assets/Box.png" id="3_d2ugx"]
 [ext_resource type="Script" path="res://addons/2d_shapes/shapes/Ellipse.gd" id="4_8pnoc"]
 [ext_resource type="PackedScene" uid="uid://oj85io8tuwc4" path="res://Scenes/balls.tscn" id="4_ayxt8"]
+[ext_resource type="PackedScene" uid="uid://cbyyfb255aovu" path="res://Scenes/bb_ball.tscn" id="6_7xsse"]
+[ext_resource type="PackedScene" uid="uid://bwwq84olx8uks" path="res://Scenes/hw_ball.tscn" id="7_r4054"]
+[ext_resource type="PackedScene" uid="uid://2h1wg4itanfm" path="res://Scenes/llb_ball.tscn" id="9_u2k84"]
+[ext_resource type="PackedScene" uid="uid://doh1cg4mpjs7" path="res://Scenes/erb_ball.tscn" id="10_g7b2r"]
+[ext_resource type="PackedScene" uid="uid://f0a8wwuxmpo0" path="res://Scenes/gfb_ball.tscn" id="11_427q2"]
 [ext_resource type="Script" path="res://Scripts/Dropper.cs" id="16_hwheb"]
 
 [node name="Scene" type="Node2D"]
@@ -27,16 +32,33 @@ scale = Vector2(0.599074, 0.599074)
 texture = ExtResource("3_d2ugx")
 
 [node name="Balls" parent="." instance=ExtResource("4_ayxt8")]
+visible = false
 position = Vector2(575, 615)
 
 [node name="Dropper" type="Node2D" parent="." node_paths=PackedStringArray("BallParent")]
 position = Vector2(575, 615)
 script = ExtResource("16_hwheb")
-Prefab = ExtResource("4_ayxt8")
+Prefab = ExtResource("6_7xsse")
+Prefab2 = ExtResource("7_r4054")
+Prefab3 = ExtResource("9_u2k84")
+Prefab4 = ExtResource("10_g7b2r")
+Prefab5 = ExtResource("11_427q2")
 BallParent = NodePath("../BallParent")
 
 [node name="Ellipse" type="Node2D" parent="Dropper"]
 script = ExtResource("4_8pnoc")
 size = Vector2(31.0332, 31.0332)
+
+[node name="BallScenes" type="Node2D" parent="."]
+
+[node name="BB Ball" parent="BallScenes" instance=ExtResource("6_7xsse")]
+
+[node name="HW Ball" parent="BallScenes" instance=ExtResource("7_r4054")]
+
+[node name="LLB Ball" parent="BallScenes" instance=ExtResource("9_u2k84")]
+
+[node name="ERB Ball" parent="BallScenes" instance=ExtResource("10_g7b2r")]
+
+[node name="GFB Ball" parent="BallScenes" instance=ExtResource("11_427q2")]
 
 [node name="BallParent" type="Node2D" parent="."]

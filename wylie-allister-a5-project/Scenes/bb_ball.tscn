@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbyyfb255aovu"]
+
+[ext_resource type="Script" path="res://Scripts/BbBall.cs" id="1_a3e8e"]
+[ext_resource type="Script" path="res://addons/2d_shapes/shapes/Ellipse.gd" id="2_lh8iw"]
+[ext_resource type="Texture2D" uid="uid://djhmndijvpggn" path="res://Assets/Bumblebee Orb.png" id="3_sj7uj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x6fel"]
+
+[node name="BB Ball" type="Node2D"]
+
+[node name="BB Ball" type="RigidBody2D" parent="."]
+position = Vector2(0, 1)
+gravity_scale = -1.0
+script = ExtResource("1_a3e8e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BB Ball"]
+scale = Vector2(1.7, 1.7)
+shape = SubResource("CircleShape2D_x6fel")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="BB Ball"]
+scale = Vector2(1.7, 1.7)
+script = ExtResource("2_lh8iw")
+size = Vector2(20, 20)
+circle = true
+metadata/_edit_lock_ = true
+
+[node name="Bumblebee Bat" type="Sprite2D" parent="BB Ball"]
+scale = Vector2(0.840001, 0.840001)
+texture = ExtResource("3_sj7uj")
+metadata/_edit_lock_ = true

@@ -1,5 +1,6 @@
-[gd_scene load_steps=22 format=3 uid="uid://oj85io8tuwc4"]
+[gd_scene load_steps=23 format=3 uid="uid://oj85io8tuwc4"]
 
+[ext_resource type="Script" path="res://Scripts/Balls.cs" id="1_0xvk7"]
 [ext_resource type="Script" path="res://Scripts/BbBall.cs" id="2_n5kak"]
 [ext_resource type="Script" path="res://addons/2d_shapes/shapes/Ellipse.gd" id="2_ue02q"]
 [ext_resource type="Texture2D" uid="uid://djhmndijvpggn" path="res://Assets/Bumblebee Orb.png" id="3_xc7lk"]
@@ -38,9 +39,10 @@ radius = 30.0
 radius = 38.096
 
 [node name="Balls" type="Node2D"]
+script = ExtResource("1_0xvk7")
 
 [node name="BB Ball" type="RigidBody2D" parent="."]
-position = Vector2(41, 28)
+position = Vector2(0, 1)
 gravity_scale = -1.0
 script = ExtResource("2_n5kak")
 
@@ -63,7 +65,6 @@ metadata/_edit_lock_ = true
 
 [node name="HW Ball" type="RigidBody2D" parent="."]
 position = Vector2(767, 214)
-scale = Vector2(1, 1)
 gravity_scale = -1.0
 script = ExtResource("2_n5kak")
 ballValue = 2
@@ -95,7 +96,6 @@ script = ExtResource("2_n5kak")
 ballValue = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LBB Ball"]
-scale = Vector2(1, 1)
 shape = SubResource("CircleShape2D_fjpqy")
 metadata/_edit_lock_ = true
 
@@ -121,7 +121,6 @@ ballValue = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ERB Ball"]
 position = Vector2(-1.52588e-05, 0)
-scale = Vector2(1, 1)
 shape = SubResource("CircleShape2D_fjpqy")
 metadata/_edit_lock_ = true
 
@@ -306,6 +305,3 @@ position = Vector2(0, 6.10352e-05)
 scale = Vector2(0.709002, 0.709002)
 texture = ExtResource("13_kvlfx")
 metadata/_edit_lock_ = true
-
-[node name="Orbs" type="Node2D" parent="."]
-visible = false

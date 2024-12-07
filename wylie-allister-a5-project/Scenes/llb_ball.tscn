@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://2h1wg4itanfm"]
+
+[ext_resource type="Script" path="res://Scripts/BbBall.cs" id="1_xid3v"]
+[ext_resource type="Script" path="res://addons/2d_shapes/shapes/Ellipse.gd" id="2_y1qta"]
+[ext_resource type="Texture2D" uid="uid://bp2vek2idcwkr" path="res://Assets/LBB Orb.png" id="3_8bjdu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qd1ub"]
+
+[node name="LLB Ball" type="Node2D"]
+
+[node name="LBB Ball" type="RigidBody2D" parent="."]
+gravity_scale = -1.0
+script = ExtResource("1_xid3v")
+ballValue = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LBB Ball"]
+shape = SubResource("CircleShape2D_qd1ub")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="LBB Ball"]
+position = Vector2(0.164879, 0.164879)
+scale = Vector2(3.2, 3.2)
+script = ExtResource("2_y1qta")
+size = Vector2(20.3298, 20.3298)
+circle = true
+metadata/_edit_lock_ = true
+
+[node name="Little Brown Bat" type="Sprite2D" parent="LBB Ball"]
+position = Vector2(0, -7.62939e-06)
+scale = Vector2(0.62, 0.62)
+texture = ExtResource("3_8bjdu")
+metadata/_edit_lock_ = true

@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwwq84olx8uks"]
+
+[ext_resource type="Script" path="res://Scripts/BbBall.cs" id="1_xwrfk"]
+[ext_resource type="Script" path="res://addons/2d_shapes/shapes/Ellipse.gd" id="2_ulgdh"]
+[ext_resource type="Texture2D" uid="uid://bvvdevq210tw2" path="res://Assets/Honduran White Orb.png" id="3_nf3qv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_86n56"]
+
+[node name="HW Ball" type="Node2D"]
+
+[node name="HW Ball" type="RigidBody2D" parent="."]
+gravity_scale = -1.0
+script = ExtResource("1_xwrfk")
+ballValue = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HW Ball"]
+position = Vector2(0.00012207, 0)
+scale = Vector2(2.70001, 2.70001)
+shape = SubResource("CircleShape2D_86n56")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="HW Ball"]
+position = Vector2(0.00012207, 0)
+scale = Vector2(2.70001, 2.70001)
+script = ExtResource("2_ulgdh")
+size = Vector2(20, 20)
+circle = true
+metadata/_edit_lock_ = true
+
+[node name="Honduran White Bat" type="Sprite2D" parent="HW Ball"]
+position = Vector2(0.00012207, 0)
+scale = Vector2(0.780001, 0.780001)
+texture = ExtResource("3_nf3qv")
+metadata/_edit_lock_ = true

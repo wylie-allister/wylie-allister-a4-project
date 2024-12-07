@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://f0a8wwuxmpo0"]
+
+[ext_resource type="Script" path="res://Scripts/BbBall.cs" id="1_32luh"]
+[ext_resource type="Script" path="res://addons/2d_shapes/shapes/Ellipse.gd" id="2_4l2tp"]
+[ext_resource type="Texture2D" uid="uid://dq03ab3qem402" path="res://Assets/Rahhh Orb.png" id="3_7gafe"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1eeyo"]
+radius = 14.0476
+
+[node name="GFB Ball" type="Node2D"]
+
+[node name="GFB Ball" type="RigidBody2D" parent="."]
+gravity_scale = -1.0
+script = ExtResource("1_32luh")
+ballValue = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GFB Ball"]
+scale = Vector2(4.2, 4.2)
+shape = SubResource("CircleShape2D_1eeyo")
+metadata/_edit_lock_ = true
+
+[node name="Ellipse" type="Node2D" parent="GFB Ball"]
+scale = Vector2(4.2, 4.2)
+script = ExtResource("2_4l2tp")
+size = Vector2(27.6405, 27.6405)
+circle = true
+metadata/_edit_lock_ = true
+
+[node name="Ghost Faced Bat" type="Sprite2D" parent="GFB Ball"]
+scale = Vector2(0.661, 0.661)
+texture = ExtResource("3_7gafe")
+metadata/_edit_lock_ = true

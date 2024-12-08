@@ -1,18 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://dc78ndbw3g1cj"]
+[gd_scene load_steps=7 format=3 uid="uid://dc78ndbw3g1cj"]
 
-[ext_resource type="Script" path="res://Scripts/BbBall.cs" id="1_hs8sm"]
 [ext_resource type="Script" path="res://addons/2d_shapes/shapes/Ellipse.gd" id="2_cgrfo"]
+[ext_resource type="Script" path="res://Scripts/MergeArea.cs" id="3_s72kp"]
 [ext_resource type="Texture2D" uid="uid://dk1qkk5o4ag6a" path="res://Assets/Vampire Orb.png" id="3_xmdjm"]
+[ext_resource type="PackedScene" uid="uid://bwwq84olx8uks" path="res://Scenes/hw_ball.tscn" id="4_rifqg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qlilj"]
 radius = 15.2399
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nw127"]
+radius = 78.1601
 
 [node name="VB Ball" type="Node2D"]
 
 [node name="VB Ball" type="RigidBody2D" parent="."]
 gravity_scale = -1.0
-script = ExtResource("1_hs8sm")
-ballValue = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VB Ball"]
 scale = Vector2(4.2, 4.2)
@@ -30,3 +32,16 @@ metadata/_edit_lock_ = true
 scale = Vector2(0.585001, 0.585001)
 texture = ExtResource("3_xmdjm")
 metadata/_edit_lock_ = true
+
+[node name="MergeArea" type="Area2D" parent="VB Ball" node_paths=PackedStringArray("Ball")]
+collision_layer = 64
+collision_mask = 64
+script = ExtResource("3_s72kp")
+Ball = NodePath("..")
+MergeBall = ExtResource("4_rifqg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VB Ball/MergeArea"]
+shape = SubResource("CircleShape2D_nw127")
+one_way_collision_margin = 0.0
+
+[connection signal="area_entered" from="VB Ball/MergeArea" to="VB Ball/MergeArea" method="OnBodyEntered"]

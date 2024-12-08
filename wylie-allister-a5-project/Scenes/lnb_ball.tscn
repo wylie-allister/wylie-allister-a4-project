@@ -1,18 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://dk47n81y3xci5"]
+[gd_scene load_steps=7 format=3 uid="uid://dk47n81y3xci5"]
 
-[ext_resource type="Script" path="res://Scripts/BbBall.cs" id="1_bvf2k"]
 [ext_resource type="Script" path="res://addons/2d_shapes/shapes/Ellipse.gd" id="2_ahl8r"]
 [ext_resource type="Texture2D" uid="uid://bps8hj82awldl" path="res://Assets/Leaf Nosed Orb.png" id="3_4a6pt"]
+[ext_resource type="Script" path="res://Scripts/MergeArea.cs" id="3_wc70b"]
+[ext_resource type="PackedScene" uid="uid://bwwq84olx8uks" path="res://Scenes/hw_ball.tscn" id="4_d8ofo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cd3nm"]
 radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8xdsc"]
+radius = 146.24
 
 [node name="LNB Ball" type="Node2D"]
 
 [node name="LNB Ball" type="RigidBody2D" parent="."]
 gravity_scale = -1.0
-script = ExtResource("1_bvf2k")
-ballValue = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LNB Ball"]
 scale = Vector2(4.2, 4.2)
@@ -32,3 +34,16 @@ position = Vector2(0, 3.05176e-05)
 scale = Vector2(0.60325, 0.60325)
 texture = ExtResource("3_4a6pt")
 metadata/_edit_lock_ = true
+
+[node name="MergeArea" type="Area2D" parent="LNB Ball" node_paths=PackedStringArray("Ball")]
+collision_layer = 1024
+collision_mask = 1024
+script = ExtResource("3_wc70b")
+Ball = NodePath("..")
+MergeBall = ExtResource("4_d8ofo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LNB Ball/MergeArea"]
+shape = SubResource("CircleShape2D_8xdsc")
+one_way_collision_margin = 0.0
+
+[connection signal="area_entered" from="LNB Ball/MergeArea" to="LNB Ball/MergeArea" method="OnBodyEntered"]

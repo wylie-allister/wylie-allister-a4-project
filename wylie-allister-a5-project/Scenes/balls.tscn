@@ -1,7 +1,6 @@
-[gd_scene load_steps=23 format=3 uid="uid://oj85io8tuwc4"]
+[gd_scene load_steps=22 format=3 uid="uid://oj85io8tuwc4"]
 
 [ext_resource type="Script" path="res://Scripts/Balls.cs" id="1_0xvk7"]
-[ext_resource type="Script" path="res://Scripts/BbBall.cs" id="2_n5kak"]
 [ext_resource type="Script" path="res://addons/2d_shapes/shapes/Ellipse.gd" id="2_ue02q"]
 [ext_resource type="Texture2D" uid="uid://djhmndijvpggn" path="res://Assets/Bumblebee Orb.png" id="3_xc7lk"]
 [ext_resource type="Texture2D" uid="uid://bvvdevq210tw2" path="res://Assets/Honduran White Orb.png" id="4_2d8uh"]
@@ -44,7 +43,6 @@ script = ExtResource("1_0xvk7")
 [node name="BB Ball" type="RigidBody2D" parent="."]
 position = Vector2(0, 1)
 gravity_scale = -1.0
-script = ExtResource("2_n5kak")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BB Ball"]
 scale = Vector2(1.7, 1.7)
@@ -66,8 +64,6 @@ metadata/_edit_lock_ = true
 [node name="HW Ball" type="RigidBody2D" parent="."]
 position = Vector2(767, 214)
 gravity_scale = -1.0
-script = ExtResource("2_n5kak")
-ballValue = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HW Ball"]
 position = Vector2(0.00012207, 0)
@@ -92,8 +88,6 @@ metadata/_edit_lock_ = true
 [node name="LBB Ball" type="RigidBody2D" parent="."]
 position = Vector2(530, 249)
 gravity_scale = -1.0
-script = ExtResource("2_n5kak")
-ballValue = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LBB Ball"]
 shape = SubResource("CircleShape2D_fjpqy")
@@ -116,8 +110,6 @@ metadata/_edit_lock_ = true
 [node name="ERB Ball" type="RigidBody2D" parent="."]
 position = Vector2(871, 225)
 gravity_scale = -1.0
-script = ExtResource("2_n5kak")
-ballValue = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ERB Ball"]
 position = Vector2(-1.52588e-05, 0)
@@ -141,8 +133,6 @@ metadata/_edit_lock_ = true
 [node name="GFB Ball" type="RigidBody2D" parent="."]
 position = Vector2(998, 274)
 gravity_scale = -1.0
-script = ExtResource("2_n5kak")
-ballValue = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GFB Ball"]
 scale = Vector2(4.2, 4.2)
@@ -164,8 +154,6 @@ metadata/_edit_lock_ = true
 [node name="VB Ball" type="RigidBody2D" parent="."]
 position = Vector2(657, 445)
 gravity_scale = -1.0
-script = ExtResource("2_n5kak")
-ballValue = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VB Ball"]
 scale = Vector2(4.2, 4.2)
@@ -187,8 +175,6 @@ metadata/_edit_lock_ = true
 [node name="HH Ball" type="RigidBody2D" parent="."]
 position = Vector2(1043, 119)
 gravity_scale = -1.0
-script = ExtResource("2_n5kak")
-ballValue = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HH Ball"]
 scale = Vector2(4.2, 4.2)
@@ -211,8 +197,6 @@ metadata/_edit_lock_ = true
 [node name="SNB Ball" type="RigidBody2D" parent="."]
 position = Vector2(1062, 446)
 gravity_scale = -1.0
-script = ExtResource("2_n5kak")
-ballValue = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SNB Ball"]
 scale = Vector2(4.2, 4.2)
@@ -234,8 +218,6 @@ metadata/_edit_lock_ = true
 [node name="BEB Ball" type="RigidBody2D" parent="."]
 position = Vector2(843, 506)
 gravity_scale = -1.0
-script = ExtResource("2_n5kak")
-ballValue = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BEB Ball"]
 scale = Vector2(4.2, 4.2)
@@ -259,8 +241,6 @@ metadata/_edit_lock_ = true
 [node name="LNB Ball" type="RigidBody2D" parent="."]
 position = Vector2(266, 415)
 gravity_scale = -1.0
-script = ExtResource("2_n5kak")
-ballValue = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LNB Ball"]
 scale = Vector2(4.2, 4.2)
@@ -284,8 +264,6 @@ metadata/_edit_lock_ = true
 [node name="FFB Ball" type="RigidBody2D" parent="."]
 position = Vector2(517, 626)
 gravity_scale = -1.0
-script = ExtResource("2_n5kak")
-ballValue = 11
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FFB Ball"]
 scale = Vector2(4.2, 4.2)

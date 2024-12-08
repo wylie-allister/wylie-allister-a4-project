@@ -1,18 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://dlftrtnqwsdjr"]
+[gd_scene load_steps=7 format=3 uid="uid://dlftrtnqwsdjr"]
 
-[ext_resource type="Script" path="res://Scripts/BbBall.cs" id="1_nh0ap"]
 [ext_resource type="Script" path="res://addons/2d_shapes/shapes/Ellipse.gd" id="2_18uhr"]
+[ext_resource type="Script" path="res://Scripts/MergeArea.cs" id="3_0l1dp"]
 [ext_resource type="Texture2D" uid="uid://dxuq216qo287u" path="res://Assets/Big Eared Bat.png" id="3_2lrbm"]
+[ext_resource type="PackedScene" uid="uid://bwwq84olx8uks" path="res://Scenes/hw_ball.tscn" id="4_rr7m5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8v8cg"]
 radius = 26.2294
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ojn2w"]
+radius = 129.004
 
 [node name="BEB Ball" type="Node2D"]
 
 [node name="BEB Ball" type="RigidBody2D" parent="."]
 gravity_scale = -1.0
-script = ExtResource("1_nh0ap")
-ballValue = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BEB Ball"]
 scale = Vector2(4.2, 4.2)
@@ -32,3 +34,16 @@ position = Vector2(0, 6.10352e-05)
 scale = Vector2(0.590999, 0.590999)
 texture = ExtResource("3_2lrbm")
 metadata/_edit_lock_ = true
+
+[node name="MergeArea" type="Area2D" parent="BEB Ball" node_paths=PackedStringArray("Ball")]
+collision_layer = 512
+collision_mask = 512
+script = ExtResource("3_0l1dp")
+Ball = NodePath("..")
+MergeBall = ExtResource("4_rr7m5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BEB Ball/MergeArea"]
+shape = SubResource("CircleShape2D_ojn2w")
+one_way_collision_margin = 0.0
+
+[connection signal="area_entered" from="BEB Ball/MergeArea" to="BEB Ball/MergeArea" method="OnBodyEntered"]

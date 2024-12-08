@@ -46,4 +46,14 @@ drop={
 [layer_names]
 
 2d_render/layer_1="balls"
-2d_render/layer_2="collision"
+2d_render/layer_2="bbcollision"
+2d_render/layer_3="hwcollision"
+2d_render/layer_4="llbcollision"
+2d_render/layer_5="erbcollision"
+2d_render/layer_6="gfbcollision"
+2d_render/layer_7="vbcollision"
+2d_render/layer_8="hhcollision"
+2d_render/layer_9="snbcollision"
+2d_render/layer_10="bebcollision"
+2d_render/layer_11="lnbcollision"
+2d_render/layer_12="ffcollision"

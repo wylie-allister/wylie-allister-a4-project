@@ -1,18 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://f0a8wwuxmpo0"]
+[gd_scene load_steps=7 format=3 uid="uid://f0a8wwuxmpo0"]
 
-[ext_resource type="Script" path="res://Scripts/BbBall.cs" id="1_32luh"]
 [ext_resource type="Script" path="res://addons/2d_shapes/shapes/Ellipse.gd" id="2_4l2tp"]
 [ext_resource type="Texture2D" uid="uid://dq03ab3qem402" path="res://Assets/Rahhh Orb.png" id="3_7gafe"]
+[ext_resource type="Script" path="res://Scripts/MergeArea.cs" id="3_u511x"]
+[ext_resource type="PackedScene" uid="uid://bwwq84olx8uks" path="res://Scenes/hw_ball.tscn" id="4_p3fri"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1eeyo"]
 radius = 14.0476
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8eqdg"]
+radius = 67.6018
 
 [node name="GFB Ball" type="Node2D"]
 
 [node name="GFB Ball" type="RigidBody2D" parent="."]
 gravity_scale = -1.0
-script = ExtResource("1_32luh")
-ballValue = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GFB Ball"]
 scale = Vector2(4.2, 4.2)
@@ -30,3 +32,16 @@ metadata/_edit_lock_ = true
 scale = Vector2(0.661, 0.661)
 texture = ExtResource("3_7gafe")
 metadata/_edit_lock_ = true
+
+[node name="MergeArea" type="Area2D" parent="GFB Ball" node_paths=PackedStringArray("Ball")]
+collision_layer = 32
+collision_mask = 32
+script = ExtResource("3_u511x")
+Ball = NodePath("..")
+MergeBall = ExtResource("4_p3fri")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GFB Ball/MergeArea"]
+shape = SubResource("CircleShape2D_8eqdg")
+one_way_collision_margin = 0.0
+
+[connection signal="area_entered" from="GFB Ball/MergeArea" to="GFB Ball/MergeArea" method="OnBodyEntered"]

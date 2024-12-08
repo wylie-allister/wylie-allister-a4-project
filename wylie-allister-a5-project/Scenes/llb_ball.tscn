@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://2h1wg4itanfm"]
+[gd_scene load_steps=8 format=3 uid="uid://2h1wg4itanfm"]
 
+[ext_resource type="PhysicsMaterial" uid="uid://dwm6nt2qvj0ic" path="res://PhysMaterials/physmat_balls.tres" id="1_j7m5p"]
 [ext_resource type="Script" path="res://addons/2d_shapes/shapes/Ellipse.gd" id="2_y1qta"]
 [ext_resource type="Texture2D" uid="uid://bp2vek2idcwkr" path="res://Assets/LBB Orb.png" id="3_8bjdu"]
 [ext_resource type="Script" path="res://Scripts/MergeArea.cs" id="3_iyb17"]
@@ -14,6 +15,7 @@ radius = 41.0
 [node name="LLB Ball" type="Node2D"]
 
 [node name="LBB Ball" type="RigidBody2D" parent="."]
+physics_material_override = ExtResource("1_j7m5p")
 gravity_scale = -1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LBB Ball"]

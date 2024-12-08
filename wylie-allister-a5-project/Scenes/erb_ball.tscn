@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://doh1cg4mpjs7"]
+[gd_scene load_steps=8 format=3 uid="uid://doh1cg4mpjs7"]
 
+[ext_resource type="PhysicsMaterial" uid="uid://dwm6nt2qvj0ic" path="res://PhysMaterials/physmat_balls.tres" id="1_7yh0j"]
 [ext_resource type="Script" path="res://addons/2d_shapes/shapes/Ellipse.gd" id="2_b35pf"]
 [ext_resource type="Texture2D" uid="uid://bjfoeoqvnqq5h" path="res://Assets/Red Bat Orb.png" id="3_1hos3"]
 [ext_resource type="Script" path="res://Scripts/MergeArea.cs" id="3_1p5jn"]
@@ -14,6 +15,7 @@ radius = 52.0
 [node name="ERB Ball" type="Node2D"]
 
 [node name="ERB Ball" type="RigidBody2D" parent="."]
+physics_material_override = ExtResource("1_7yh0j")
 gravity_scale = -1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ERB Ball"]

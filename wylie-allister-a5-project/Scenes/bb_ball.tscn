@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://cbyyfb255aovu"]
+[gd_scene load_steps=8 format=3 uid="uid://cbyyfb255aovu"]
 
+[ext_resource type="PhysicsMaterial" uid="uid://dwm6nt2qvj0ic" path="res://PhysMaterials/physmat_balls.tres" id="1_8eub7"]
 [ext_resource type="Script" path="res://addons/2d_shapes/shapes/Ellipse.gd" id="2_lh8iw"]
 [ext_resource type="Texture2D" uid="uid://djhmndijvpggn" path="res://Assets/Bumblebee Orb.png" id="3_sj7uj"]
 [ext_resource type="Script" path="res://Scripts/MergeArea.cs" id="4_50wcg"]
@@ -14,6 +15,7 @@ radius = 25.0
 
 [node name="BB Ball" type="RigidBody2D" parent="."]
 position = Vector2(0, 1)
+physics_material_override = ExtResource("1_8eub7")
 gravity_scale = -1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BB Ball"]

@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://j405ft7fdmun"]
+[gd_scene load_steps=8 format=3 uid="uid://j405ft7fdmun"]
 
+[ext_resource type="PhysicsMaterial" uid="uid://dwm6nt2qvj0ic" path="res://PhysMaterials/physmat_balls.tres" id="1_dlj6l"]
 [ext_resource type="Script" path="res://addons/2d_shapes/shapes/Ellipse.gd" id="2_prdry"]
 [ext_resource type="Script" path="res://Scripts/MergeArea.cs" id="3_3ie4v"]
 [ext_resource type="Texture2D" uid="uid://cotiwk73y15wg" path="res://Assets/Flying Fox Orb.png" id="3_6th3v"]
@@ -14,6 +15,7 @@ radius = 190.948
 [node name="FF Ball" type="Node2D"]
 
 [node name="FFB Ball" type="RigidBody2D" parent="."]
+physics_material_override = ExtResource("1_dlj6l")
 gravity_scale = -1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FFB Ball"]

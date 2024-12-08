@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bwwq84olx8uks"]
+[gd_scene load_steps=7 format=3 uid="uid://bwwq84olx8uks"]
 
+[ext_resource type="PhysicsMaterial" uid="uid://dwm6nt2qvj0ic" path="res://PhysMaterials/physmat_balls.tres" id="1_d5rv8"]
 [ext_resource type="Script" path="res://addons/2d_shapes/shapes/Ellipse.gd" id="2_ulgdh"]
 [ext_resource type="Script" path="res://Scripts/MergeArea.cs" id="3_3g0gx"]
 [ext_resource type="Texture2D" uid="uid://bvvdevq210tw2" path="res://Assets/Honduran White Orb.png" id="3_nf3qv"]
@@ -13,6 +14,7 @@ radius = 36.0
 [node name="HW Ball" type="Node2D"]
 
 [node name="HW Ball" type="RigidBody2D" parent="."]
+physics_material_override = ExtResource("1_d5rv8")
 gravity_scale = -1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HW Ball"]
@@ -40,7 +42,6 @@ collision_layer = 4
 collision_mask = 4
 script = ExtResource("3_3g0gx")
 Ball = NodePath("..")
-MergeBall = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HW Ball/MergeArea"]
 shape = SubResource("CircleShape2D_1rll4")

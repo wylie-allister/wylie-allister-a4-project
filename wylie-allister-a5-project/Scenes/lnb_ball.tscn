@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://dk47n81y3xci5"]
+[gd_scene load_steps=8 format=3 uid="uid://dk47n81y3xci5"]
 
+[ext_resource type="PhysicsMaterial" uid="uid://dwm6nt2qvj0ic" path="res://PhysMaterials/physmat_balls.tres" id="1_u0rr8"]
 [ext_resource type="Script" path="res://addons/2d_shapes/shapes/Ellipse.gd" id="2_ahl8r"]
 [ext_resource type="Texture2D" uid="uid://bps8hj82awldl" path="res://Assets/Leaf Nosed Orb.png" id="3_4a6pt"]
 [ext_resource type="Script" path="res://Scripts/MergeArea.cs" id="3_wc70b"]
@@ -14,6 +15,7 @@ radius = 146.24
 [node name="LNB Ball" type="Node2D"]
 
 [node name="LNB Ball" type="RigidBody2D" parent="."]
+physics_material_override = ExtResource("1_u0rr8")
 gravity_scale = -1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LNB Ball"]

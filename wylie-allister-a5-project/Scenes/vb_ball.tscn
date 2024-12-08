@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://dc78ndbw3g1cj"]
+[gd_scene load_steps=8 format=3 uid="uid://dc78ndbw3g1cj"]
 
+[ext_resource type="PhysicsMaterial" uid="uid://dwm6nt2qvj0ic" path="res://PhysMaterials/physmat_balls.tres" id="1_hm2mu"]
 [ext_resource type="Script" path="res://addons/2d_shapes/shapes/Ellipse.gd" id="2_cgrfo"]
 [ext_resource type="Script" path="res://Scripts/MergeArea.cs" id="3_s72kp"]
 [ext_resource type="Texture2D" uid="uid://dk1qkk5o4ag6a" path="res://Assets/Vampire Orb.png" id="3_xmdjm"]
@@ -14,6 +15,7 @@ radius = 78.1601
 [node name="VB Ball" type="Node2D"]
 
 [node name="VB Ball" type="RigidBody2D" parent="."]
+physics_material_override = ExtResource("1_hm2mu")
 gravity_scale = -1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VB Ball"]

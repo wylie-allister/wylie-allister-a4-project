@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bfndct5fmj401"]
+[gd_scene load_steps=24 format=3 uid="uid://bfndct5fmj401"]
 
 [ext_resource type="Texture2D" uid="uid://c7id133upxei7" path="res://Assets/Background.png" id="1_44odc"]
 [ext_resource type="Texture2D" uid="uid://e8dbgclsl1at" path="res://Assets/Stalagtites.png" id="2_b5lft"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dk47n81y3xci5" path="res://Scenes/lnb_ball.tscn" id="16_aotkd"]
 [ext_resource type="Script" path="res://Scripts/Dropper.cs" id="16_hwheb"]
 [ext_resource type="PackedScene" uid="uid://j405ft7fdmun" path="res://Scenes/ff_ball.tscn" id="17_t0u4b"]
+[ext_resource type="FontFile" uid="uid://e0otb6g11acw" path="res://Assets/SMALLBURG-REGULAR.OTF" id="18_0vpvf"]
 [ext_resource type="Script" path="res://Scripts/ScoreUI.cs" id="19_bv4aw"]
 [ext_resource type="Script" path="res://Scripts/KillZone.cs" id="19_x2frf"]
 [ext_resource type="PackedScene" uid="uid://duij30idfn4v4" path="res://Scenes/death_screen.tscn" id="20_xcmxv"]
@@ -156,13 +157,16 @@ metadata/_edit_lock_ = true
 [node name="BallParent" type="Node2D" parent="."]
 
 [node name="Score" type="Node2D" parent="."]
-position = Vector2(97, 143)
+position = Vector2(50, 218)
 
 [node name="Label" type="Label" parent="Score"]
 offset_right = 40.0
 offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("18_0vpvf")
+theme_override_font_sizes/font_size = 30
 text = "Score:"
 script = ExtResource("19_bv4aw")
+metadata/_edit_lock_ = true
 
 [node name="Kill Zone" type="Node2D" parent="."]
 position = Vector2(576, 643)

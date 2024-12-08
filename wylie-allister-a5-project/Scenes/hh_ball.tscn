@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://7isq8yiwqhe"]
+[gd_scene load_steps=8 format=3 uid="uid://7isq8yiwqhe"]
 
+[ext_resource type="PhysicsMaterial" uid="uid://dwm6nt2qvj0ic" path="res://PhysMaterials/physmat_balls.tres" id="1_iof2d"]
 [ext_resource type="Script" path="res://addons/2d_shapes/shapes/Ellipse.gd" id="2_ehjuo"]
 [ext_resource type="Script" path="res://Scripts/MergeArea.cs" id="3_fykry"]
 [ext_resource type="Texture2D" uid="uid://bmrg71scqaowr" path="res://Assets/Squarshed Orb.png" id="3_yvfq4"]
@@ -14,6 +15,7 @@ radius = 91.2688
 [node name="HH Ball" type="Node2D"]
 
 [node name="HH Ball" type="RigidBody2D" parent="."]
+physics_material_override = ExtResource("1_iof2d")
 gravity_scale = -1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HH Ball"]

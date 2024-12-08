@@ -1,17 +1,15 @@
-[gd_scene load_steps=22 format=3 uid="uid://bfndct5fmj401"]
+[gd_scene load_steps=23 format=3 uid="uid://bfndct5fmj401"]
 
 [ext_resource type="Texture2D" uid="uid://c7id133upxei7" path="res://Assets/Background.png" id="1_44odc"]
 [ext_resource type="Texture2D" uid="uid://e8dbgclsl1at" path="res://Assets/Stalagtites.png" id="2_b5lft"]
 [ext_resource type="Texture2D" uid="uid://ckxgnwuarmvyf" path="res://Assets/Box.png" id="3_d2ugx"]
 [ext_resource type="Script" path="res://addons/2d_shapes/shapes/Ellipse.gd" id="4_8pnoc"]
-[ext_resource type="PackedScene" uid="uid://oj85io8tuwc4" path="res://Scenes/balls.tscn" id="4_ayxt8"]
 [ext_resource type="Script" path="res://addons/2d_shapes/shapes/Rectangle.gd" id="5_yyf27"]
 [ext_resource type="PackedScene" uid="uid://cbyyfb255aovu" path="res://Scenes/bb_ball.tscn" id="6_7xsse"]
 [ext_resource type="PackedScene" uid="uid://bwwq84olx8uks" path="res://Scenes/hw_ball.tscn" id="7_r4054"]
 [ext_resource type="PackedScene" uid="uid://2h1wg4itanfm" path="res://Scenes/llb_ball.tscn" id="9_u2k84"]
 [ext_resource type="PackedScene" uid="uid://doh1cg4mpjs7" path="res://Scenes/erb_ball.tscn" id="10_g7b2r"]
 [ext_resource type="PackedScene" uid="uid://f0a8wwuxmpo0" path="res://Scenes/gfb_ball.tscn" id="11_427q2"]
-[ext_resource type="Script" path="res://Scripts/BallMerge.cs" id="12_51tc1"]
 [ext_resource type="PackedScene" uid="uid://dc78ndbw3g1cj" path="res://Scenes/vb_ball.tscn" id="12_n2eiv"]
 [ext_resource type="PackedScene" uid="uid://7isq8yiwqhe" path="res://Scenes/hh_ball.tscn" id="13_f6gxj"]
 [ext_resource type="PackedScene" uid="uid://d0mylgcj6vin" path="res://Scenes/snb_ball.tscn" id="14_ltrwt"]
@@ -20,8 +18,12 @@
 [ext_resource type="Script" path="res://Scripts/Dropper.cs" id="16_hwheb"]
 [ext_resource type="PackedScene" uid="uid://j405ft7fdmun" path="res://Scenes/ff_ball.tscn" id="17_t0u4b"]
 [ext_resource type="Script" path="res://Scripts/ScoreUI.cs" id="19_bv4aw"]
+[ext_resource type="Script" path="res://Scripts/KillZone.cs" id="19_x2frf"]
+[ext_resource type="PackedScene" uid="uid://duij30idfn4v4" path="res://Scenes/death_screen.tscn" id="20_xcmxv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_57gtb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8d211"]
 
 [node name="Scene" type="Node2D"]
 
@@ -45,11 +47,7 @@ scale = Vector2(0.599074, 0.599074)
 texture = ExtResource("3_d2ugx")
 metadata/_edit_lock_ = true
 
-[node name="Balls" parent="." instance=ExtResource("4_ayxt8")]
-visible = false
-position = Vector2(575, 615)
-
-[node name="Dropper" type="Node2D" parent="." node_paths=PackedStringArray("BallParent")]
+[node name="Dropper" type="Node2D" parent="." node_paths=PackedStringArray("BallParent", "ScoreUI")]
 position = Vector2(575, 615)
 script = ExtResource("16_hwheb")
 Prefab = ExtResource("6_7xsse")
@@ -58,13 +56,13 @@ Prefab3 = ExtResource("9_u2k84")
 Prefab4 = ExtResource("10_g7b2r")
 Prefab5 = ExtResource("11_427q2")
 BallParent = NodePath("../BallParent")
+ScoreUI = NodePath("../Score/Label")
 
 [node name="Ellipse" type="Node2D" parent="Dropper"]
 script = ExtResource("4_8pnoc")
 size = Vector2(31.0332, 31.0332)
 
 [node name="BallScenes" type="Node2D" parent="."]
-script = ExtResource("12_51tc1")
 
 [node name="BB Ball" parent="BallScenes" instance=ExtResource("6_7xsse")]
 visible = false
@@ -165,3 +163,23 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "Score:"
 script = ExtResource("19_bv4aw")
+
+[node name="Kill Zone" type="Node2D" parent="."]
+position = Vector2(576, 643)
+scale = Vector2(21.325, 1)
+script = ExtResource("19_x2frf")
+DeathScreen = ExtResource("20_xcmxv")
+
+[node name="Area2D" type="Area2D" parent="Kill Zone"]
+collision_layer = 0
+collision_mask = 0
+metadata/_edit_lock_ = true
+
+[node name="Timer" type="Timer" parent="Kill Zone/Area2D"]
+wait_time = 5.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone/Area2D"]
+shape = SubResource("RectangleShape2D_8d211")
+metadata/_edit_lock_ = true
+
+[connection signal="timeout" from="Kill Zone/Area2D/Timer" to="Kill Zone" method="OnTimerTimeout"]

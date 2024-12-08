@@ -10,14 +10,16 @@ public partial class ScoreUI : Label
 		UpdateScreen();
 	}
 
-	public void ScoreAdd(Dropper ball)
+	public void ScoreAdd(int points)
 	{
-		score += ball.points;
+		//makes score equal points & updates score
+		score = points;
 		UpdateScreen();
 	}
 
 	private void UpdateScreen()
 	{
+		//prints score to screen
 		Text = $"SCORE: {score}";
 		GD.Print(score);
 	}

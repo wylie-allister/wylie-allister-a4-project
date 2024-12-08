@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://duij30idfn4v4"]
+
+[ext_resource type="Script" path="res://addons/2d_shapes/shapes/Rectangle.gd" id="1_a480b"]
+[ext_resource type="FontFile" uid="uid://e0otb6g11acw" path="res://Assets/SMALLBURG-REGULAR.OTF" id="2_f2ocx"]
+
+[node name="Death Screen" type="Node2D"]
+position = Vector2(580, 318)
+
+[node name="Rectangle" type="Node2D" parent="."]
+script = ExtResource("1_a480b")
+size = Vector2(1920, 1080)
+fill_color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = -583.0
+offset_top = -315.0
+offset_right = 585.0
+offset_bottom = 344.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_f2ocx")
+theme_override_font_sizes/font_size = 100
+text = "Game Over!"
+horizontal_alignment = 1
+vertical_alignment = 1

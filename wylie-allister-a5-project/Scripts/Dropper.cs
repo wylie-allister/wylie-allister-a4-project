@@ -19,6 +19,8 @@ public partial class Dropper : Node2D
     private PackedScene Prefab5;
     [Export]
     private Node2D BallParent;
+    [Export]
+    private ScoreUI ScoreUI;
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
@@ -38,11 +40,10 @@ public partial class Dropper : Node2D
             int randomBat = GD.RandRange(1, 5);
             if (randomBat == 1)
             {
-                points += 1;
                 Node2D balls = Prefab.Instantiate<Node2D>();
                 balls.GlobalPosition = this.GlobalPosition;
                 BallParent.AddChild(balls);
-
+                points += 1;
             }
             if (randomBat == 2)
             {
@@ -72,6 +73,8 @@ public partial class Dropper : Node2D
                 BallParent.AddChild(balls);
                 points += 5;
             }
+            //adds to score
+            ScoreUI.ScoreAdd(points);
         }
     }
 }
